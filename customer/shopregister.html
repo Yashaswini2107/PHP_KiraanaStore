@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Grocery Shop</title>
+</head>
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+   font-family: Arial, sans-serif;
+   background-position-x: center;
+      background-image: url('images/bc.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size:cover;
+}
+  .container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f2fcfc;
+  }
+  .navbar {
+  background-color: #ff4500;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: #1e1e1e;
+}
+
+.navbar .logo {
+  float: left;
+  font-weight: bold;
+  font-size: 32px;
+  margin-right: 20px;
+  padding: 14px 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .right-items {
+  float: right;
+}
+
+  h2 {
+    text-align: center;
+  }
+
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form-section {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+
+  .form-section h3 {
+    margin-top: 0;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .checkbox-container {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    background-color: #ed563b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #f9735b;
+  }
+
+  #map {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+
+</style>
+<body>
+   <div class="navbar">
+      <a class="logo" href="index.html"> Kiraana <span>store</span></a>
+    <div class="right-items">
+
+     <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Grocery Shop Registration</h2>
+    <div class="form-container">
+      <div class="form-section">
+        <form action="ownerform.php" method="POST" enctype="multipart/form-data">
+
+        <h3>Shop Information</h3>
+        <label for="shop-name">Shop Name</label>
+        <input type="text" id="shopname" name="shopname" required>
+
+        <label for="shop-address">Address</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="shop-address">Pincode</label>
+        <input type="text" id="pincode" name="pincode" required>
+
+        <label for="GSTNO">GST NO.</label>
+        <input type="text" id="GSTNO" name="GSTNO" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+
+      <div class="form-section">
+        <h3>Contact Details</h3>
+        <label for="contactnumber">Contact Number</label>
+        <input type="tel" id="contactnumber" name="contactnumber" required>
+
+        <label for="FSSAIlicense">FSSAI license No.</label>
+        <input type="text" id="FSSAIlicense" name="FSSAIlicense" required>
+
+        <label for="Trade-License">Trade License</label>
+        <input type="text" id="tradelicense" name="tradelicense" required>
+      </div>
+
+      <d
+
+      iv class="form-section">
+        <h3>Owner Information</h3>
+        <label for="ownername">Owner Name</label>
+        <input type="text" id="ownername" name="ownername" required>
+
+        <label for="owner-phone">Owner Contact Number</label>
+        <input type="tel" id="ownerphone" name="ownerphone" required>
+
+        <label for="owneremail">Owner Email</label>
+        <input type="email" id="owneremail" name="owneremail" required>
+      </div>
+
+      <div class="form-section">
+        <h3>Grocery Type</h3>
+        <label><input type="checkbox" name="grocerytype" value="all-items" onchange="togglegrocerytype(this.checked)">All Items</label>
+        <label><input type="checkbox" name="grocerytype" value="kitchen-grocery">Kitchen Grocery</label>
+        <label><input type="checkbox" name="grocerytype" value="fruits-vegetables">Fruits and Vegetables</label>
+        <label><input type="checkbox" name="grocerytype" value="home-cleaner">Home Cleaner</label>
+        <label><input type="checkbox" name="grocerytype" value="Food grains,oil & masala">Food grains,oil & masala</label>
+        <label><input type="checkbox" name="grocerytype" value="Dairy Products">Dairy Products</label>
+        <label><input type="checkbox" name="grocerytype" value="Bevarages">Bevarages</label>
+      </div>
+
+      <div class="form-section">
+        <h3>Opening Hours</h3>
+        <label for="opening-hours"></label>
+        <input type="time" id="openinghours" name="openinghours" required>
+      </div>
+
+      <div class="form-section">
+        <h3>Closing Hours</h3>
+        <label for="closing-hours"></label>
+        <input type="time" id="closinghours" name="closinghours" required>
+      </div>
+
+      <div class="form-section">
+        <h3>Opening Days</h3>
+        <label><input type="checkbox" id="allDays"   name="openingdays" value="all-days" onchange="toggleDays(this.checked)">All days</label>
+        <label><input type="checkbox" id="monday"    name="openingdays" value="Monday">Monday</label>
+        <label><input type="checkbox" id="tuesday"   name="openingdays" value="Tuesday">Tuesday</label>
+        <label><input type="checkbox" id="wednesday" name="openingdays" value="Wednesday">Wednesday</label>
+        <label><input type="checkbox" id="thursday"  name="openingdays" value="Thursday">Thursday</label>
+        <label><input type="checkbox" id="friday"    name="openingdays" value="Friday">Friday</label>
+        <label><input type="checkbox" id="saturday"  name="openingdays" value="Saturday">Saturday</label>
+        <label><input type="checkbox" id="sunday"    name="openingdays" value="Sunday">Sunday</label>
+      </div>
+
+      <div class="form-section">
+        <h3>Add Your Shop Image </h3>
+        <label for="shopimage"></label>
+        <input type="file" id="shopimage" name="shopimage" required>
+      </div>
+
+       <div class="form-section">
+        <h3>Terms and Conditions</h3>
+        <label>
+          <input type="checkbox" id="terms" name="terms">
+          I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>
+        </label>
+      </div>
+
+
+
+      <input type="submit" value="Submit" onclick="validateForm(event)">
+    </div>
+  </div>
+  <script>
+    function validateForm(event) {
+      var termsCheckbox = document.getElementById("terms");
+
+      if (!termsCheckbox.checked) {
+        event.preventDefault(); // Prevent form submission if terms are not accepted
+        alert("Please accept the Terms and Conditions.");
+      }
+    }
+  </script>
+
+  <script>
+    function togglegrocerytype(selectAll) {
+      var checkboxes = document.querySelectorAll('input[name="grocerytype"]');
+
+      if (selectAll) {
+        checkboxes.forEach(function (checkbox) {
+          checkbox.checked = true;
+        });
+      } else {
+        checkboxes.forEach(function (checkbox) {
+          checkbox.checked = false;
+        });
+      }
+    }
+
+    function toggleDays(selectAll) {
+      var checkboxes = document.querySelectorAll('input[name="openingdays"]');
+
+      if (selectAll) {
+        checkboxes.forEach(function (checkbox) {
+          checkbox.checked = true;
+        });
+      } else {
+        checkboxes.forEach(function (checkbox) {
+          checkbox.checked = false;
+        });
+      }
+    }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script src="script.js"></script>
+</body>
+</html>

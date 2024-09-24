@@ -1,0 +1,252 @@
+<style>/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+  *{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: rgb(226, 226, 226);
+}
+nav{
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  width: 90px;
+  /* width: 280px; */
+  background: #eb893b;
+  overflow: hidden;
+  transition: 1s;
+}
+nav:hover{
+  width: 280px;
+  transition: 1s;
+}
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+  padding-bottom: 3rem;
+}
+
+.logo img{
+  width: 95px;
+  height: 85px;
+  border-radius: 50%;
+}
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a{
+  position: relative;
+  width: 280px;
+  font-size: 18px;
+  color: #000;
+  display: table;
+  padding: 10px;
+}
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover{
+  background: #eee;
+}
+a:hover i{
+  color: #f9735b;
+  transition: 0.5s;
+}
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+.container{
+  display: flex;
+}
+
+/* MAin Section */
+.main{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+.main-top{
+  display: flex;
+  width: 100%;
+}
+.main-top i{
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main .users{
+  display: flex;
+  width: 100%;
+}
+.users .card{
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.users .card img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.users .card h4{
+  text-transform: uppercase;
+}
+.users .card p{
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.users table{
+  margin:  auto;
+}
+.users .per span{
+  padding: 5px;
+  border-radius: 10px;
+  background: rgb(223, 223, 223);
+}
+.users td{
+  font-size: 14px;
+  padding-right: 15px;
+}
+.users .card button{
+  width: 100%;
+  margin-top: 8px;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #4AD489;
+}
+.users .card button:hover{
+  background: #4AD489;
+  color: #fff;
+  transition: 0.5s;
+}
+
+</style>
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("a[data-content]").click(function(e) {
+        e.preventDefault();
+        var contentUrl = $(this).data("content");
+        $("#content").load(contentUrl);
+      });
+    });
+  </script>
+  <script>
+function showRequestDetails(requestId) {
+  // Make an AJAX request to fetch the request details
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // Display the request details in a modal or a separate section
+      document.getElementById("requestDetails").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "get_request_details.php?request_id=" + requestId, true);
+  xhttp.send();
+}
+</script>
+
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="" class="logo">
+            <img src="images/Screenshot 2023-05-30 170727.png">
+            <span class="nav-item">KIRAANA <br> Admin</span>
+          </a>
+        </li>
+       <li>
+  <a href="#" data-content="admin.php">
+    <i class="fas fa-menorah"></i>
+    <span class="nav-item">Shop Request</span>
+  </a>
+  
+</li>
+
+        <li>
+          <a href="#" data-content="view_user.php">
+            <i class="fas fa-comment"></i>
+            <span class="nav-item">View users</span>
+          </a>
+        </li>
+          <li>
+          <a href="#" data-content="chart1.php">
+            <i class="fas fa-comment"></i>
+            <span class="nav-item">View Charts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-content="acceptedshop.php">
+            <i class="fas fa-database"></i>
+            <span class="nav-item">View</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-content="viewfeedback.php">
+            <i class="fas fa-chart-bar"></i>
+            <span class="nav-item">View Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="logout.php" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="content"></div>
+  </div>
+
+</body>
+</html>

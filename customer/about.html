@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us - Online Grocery Shopping</title>
+  <style>
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header-area {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  height: 80px;
+  background: rgba(250,250,250,0.1);
+  -webkit-transition: all .5s ease 0s;
+  -moz-transition: all .5s ease 0s;
+  -o-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+}
+.header-area.header-sticky {
+  min-height: 80px;
+}
+
+.header-area.header-sticky .nav {
+  margin-top: 50px !important;
+}
+    .navbar {
+      background-color: #ff4500;
+      overflow: hidden;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      background-color:#1e1e1e;
+    }
+    .navbar .logo {
+      float: left;
+      font-weight: bold;
+      font-size: 32px;
+      margin-right: 20px;
+      padding: 14px 16px;
+      color: #fff;
+      text-decoration: none;
+    
+}
+    .navbar .right-items {
+      float: right;
+    }
+    .main-banner {
+  position: relative;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.section-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.section-bg:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35,45,57,0.8);
+}
+
+.section-bg > form,
+.section-bg .container {
+  position: relative;
+  z-index: 2
+}
+#call-to-action {
+  padding: 120px 0px;
+  background-image: url(../images/cta-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.cta-content h2 em {
+  font-style: normal;
+  color: #ed563b;
+}
+
+.cta-content p {
+  font-size: 16px;
+  color: #fff;
+  margin: 15px 0px 25px 0px;
+}
+#our-classes {
+  margin-bottom: 140px;
+}
+
+#tabs ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin-bottom: 0px;
+}
+
+#tabs ul li {
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 100%;
+}
+#tabs ul li:last-child {
+  margin-bottom: 0px;
+}
+#tabs ul li a {
+  text-transform: capitalize;
+  width: 100%;
+  padding: 30px 30px;
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  font-size: 19px;
+  color: #232d39;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+#tabs .main-rounded-button a {
+  text-align: center;
+  padding: 20px 30px;
+  width: 100%;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  color: #fff;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  background-color: #ed563b;
+}
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#tabs .main-rounded-button a:hover {
+  background-color: #f9735b;
+}
+#tabs ul li a .fa {
+  font-size: 32px;
+  height: 32px;
+  color: #ed563b;
+  margin-right: 15px;
+  display: inline-block;
+}
+#tabs ul .ui-tabs-active span {
+  background: #faf5b2;
+  border: #faf5b2;
+  line-height: 90px;
+  border-bottom: none;
+}
+#tabs ul .ui-tabs-active a {
+  color: #ed563b;
+}
+#tabs ul .ui-tabs-active span {
+  color: #1e1e1e;
+}
+.tabs-content {
+  margin-left: 30px;
+  text-align: left;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.tabs-content img {
+  max-width: 100%;
+  overflow: hidden;
+   border-radius: 50%;
+   padding:20px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tabs-content h4 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #232d39;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+.tabs-content p {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 28px;
+  text-indent: 30px;
+}
+footer {
+  text-align: center;
+  padding: 30px 0px;
+}
+
+footer p {
+  color: #232d39;
+  font-size: 13px;
+}
+
+footer p a {
+  cursor: pointer;
+  color: #ed563b;
+}
+
+footer p a:hover {
+  color: #ed563b;
+}
+
+.goog-te-banner-frame {
+      display: none !important;
+    }
+
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+
+
+
+  </style>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          includedLanguages: 'en,hi,kn,ml,bn,te,ta,gu,sa', // Specify the languages you want to include
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google-translate'
+      );
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body>
+    <div class="navbar">
+    <a class="logo" href="index.html">Kiraana Store</a>
+    <div class="right-items">
+     <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+</div>
+  
+ <section class="section section-bg" id="call-to-action" style="background-image: url(images/indian-condiments-with-copy-space-view.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cta-content">
+                        <br>
+                        <br>
+                        <h2>Learn more <em>About Us</em></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="section" id="our-classes">
+        <div class="container">
+
+            <br>
+            <br>
+            <br>
+            <div class="row" id="tabs">
+              <div class="col-lg-4">
+  
+            </div>
+              <div class="col-lg-8">
+                <section class='tabs-content'>
+                  <article id='tabs-1'>
+                    <h4><center>Our Goals</center></h4>
+                    <img src="images/about-image-1-940x460.jpg" alt="">
+
+                    <p>This website helps you to do grocery shopping online from anywhere and you can save your time.</p>
+
+                    <p>Our goal is to give our clients the best shopping background as far as service, range, and value, which assembles a solid business and conveys long haul an incentive for our investors.</p>
+
+                   
+                  </article>
+                  <article id='tabs-2'>
+                    
+                    <h4>Our Work</h4>
+                    <img src="images/about-image-2-940x460.jpg" alt="">
+                    <p>Appropriate from new Fruits and Vegetables, Rice and Lentils, Spices and Seasonings to Packaged items, Beverages, Personal consideration items, Meats – we have everything.</p>
+
+                    <p>Browse a wide scope of choices in each category, solely handpicked to enable you to locate the best quality accessible at the least cost.
+
+                    Select an availability for conveyance and your request will be conveyed ideal to your doorstep.
+
+                    You can pay utilizing your visa/Mastercard or with cash at your conveyance.
+
+                    We ensure that your time will be saved and you will receive the best quality!</p>
+
+                    
+                  </article>
+                  <article id='tabs-3'>
+                    
+                    <h4>Our Passion</h4>
+                    <img src="images/about-image-3-940x460.jpg" alt="">
+                    <p></p>
+
+                   
+
+                   
+                  </article>
+                </section>
+              </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright © 2023 Kiraana Shop
+                        - <a href="/">kiraanashop.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+</body>
+</html>
